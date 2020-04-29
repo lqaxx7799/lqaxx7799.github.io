@@ -4,6 +4,8 @@ const urlParams = new URLSearchParams(queryString);
 
 const livechat_token = urlParams.get('token');
 
+console.log('aaaa', livechat_token);
+
 (function (d, s, id, t) {
   if (d.getElementById(id)) return;
   var js, fjs = d.getElementsByTagName(s)[0];
