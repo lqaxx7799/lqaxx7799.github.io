@@ -1,12 +1,8 @@
-const queryString = window.location.search;
-
+const src = document.querySelector('script[src^="https://lqaxx7799.github.io/livechat-script.js"]').src;
+const srcArray = src.split('?');
+const queryString = srcArray[arr.length - 1];
 const urlParams = new URLSearchParams(queryString);
-
 const livechat_token = urlParams.get('token');
-
-console.log('bbbb', queryString);
-
-console.log('aaaa', livechat_token);
 
 (function (d, s, id, t) {
   if (d.getElementById(id)) return;
