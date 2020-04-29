@@ -2,7 +2,7 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const livechat_token = urlParams.get('livechat_token');
+const livechat_token = urlParams.get('token');
 
 (function (d, s, id, t) {
   if (d.getElementById(id)) return;
