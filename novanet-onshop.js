@@ -3,17 +3,15 @@ document.addEventListener('novanet-meta-created', () => {
   if (addToCartButton) {
     const productName = document.querySelector('#main-wrapper > div > div.product-info > div > div > div.col-lg-7.pro-detail.pt-3.pt-lg-5 > h1').firstChild.nodeValue.trim();
     const productId = document.querySelector("#add-to-cart > input[type=hidden]:nth-child(3)").value;
-    setTimeout(() => {
-      window.Novanet.init({
-        event: 'product-view',
-        productDetails: [{
-          product: {
-            id: productId,
-            productName,
-          },
-        }],
-      });
-    }, 300);
+    window.Novanet.init({
+      event: 'product-view',
+      productDetails: [{
+        product: {
+          id: productId,
+          productName,
+        },
+      }],
+    });
 
     addToCartButton.addEventListener('click', () => {
       const quantity = document.querySelector("#add-to-cart > div.d-flex.flex-wrap.py-2.show-on-pc > div > div > div.buy-total > input").value;
@@ -41,12 +39,10 @@ document.addEventListener('novanet-meta-created', () => {
         quantity,
       };
     });
-    setTimeout(() => {
-      window.Novanet.init({
-        event: 'purchase',
-        productDetails: products,
-      });
-    }, 300);
+    window.Novanet.init({
+      event: 'purchase',
+      productDetails: products,
+    });
 
     document.querySelector(".btn-payment-success").addEventListener('click', () => {
       window.Novanet.init({
