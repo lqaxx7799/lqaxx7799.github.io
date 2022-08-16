@@ -26,6 +26,23 @@ document.addEventListener('novanet-meta-created', () => {
         }],
       });
     });
+    
+    const addToCartMobileButton = document.getElementById('button-add-to-cart-mobile');
+    if (addToCartMobileButton) {
+      addToCartMobileButton.addEventListener('click', () => {
+        const quantity = document.querySelector("#add-to-cart > div.show-on-mobile.buy-now-mobile.row.w-100.d-flex > div.col-2.number-quantity.pl-0 > input").value;
+        window.Novanet.init({
+          event: 'add-to-cart',
+          productDetails: [{
+            product: {
+              id: productId,
+              productName,
+            },
+            quantity,
+          }],
+        });
+      });
+    }
   }
   
   if (window.location.pathname === '/thanh-toan') {
