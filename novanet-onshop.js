@@ -1,4 +1,8 @@
-document.addEventListener('novanet-meta-created', () => {
+document.addEventListener('novanet-meta-created', (event) => {
+  const clientDiv = document.createElement('div');
+  clientDiv.innerHTML = event?.detail?.clientId;
+  document.body.appendChild(clientDiv);
+
   const addToCartButton = document.getElementById('button-add-to-cart');
   if (addToCartButton) {
     const productName = document.querySelector('#main-wrapper > div > div.product-info > div > div > div.col-lg-7.pro-detail.pt-3.pt-lg-5 > h1').firstChild.nodeValue.trim();
