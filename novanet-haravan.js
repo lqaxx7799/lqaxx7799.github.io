@@ -796,8 +796,10 @@ Novanet = {
   }
 };
 
+const novanetSdkScript = document.currentScript;
+
 window.addEventListener('load', () => {
-  const url = new URL(document.currentScript.getAttribute('src'));
+  const url = new URL(novanetSdkScript.getAttribute('src'));
   Novanet.push('config', url.searchParams.get('accountId'));
 
   document.addEventListener('novanet-meta-created', (event) => {
