@@ -812,7 +812,7 @@ window.addEventListener('load', () => {
         const productName = elem.querySelector("td.product-description > span.product-description-name").innerText;
         const productId = elem.dataset.productId;
         const quantity = parseInt(elem.querySelector("td.product-quantity").innerHTML);
-        const productGroup = localStorage.getItem(`product:${productId}}:productGroup`)
+        const productGroup = localStorage.getItem(`product:${productId}:productGroup`);
         return {
           product: {
             id: productId,
